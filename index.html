@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Barang Custom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
+        }
+        header {
+            background-color: #3a3a55;
+            color: #f0c674;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #29293d;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #f0c674;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #323245;
+        }
+        .product img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .product-details {
+            flex: 1;
+            margin-left: 15px;
+        }
+        .product input {
+            width: 60px;
+            padding: 5px;
+            margin-left: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #1e1e2f;
+            color: #e0e0e0;
+        }
+        .product button {
+            padding: 10px 15px;
+            background-color: #f0c674;
+            color: #1e1e2f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .product button:hover {
+            background-color: #d4a951;
+        }
+        .order-form {
+            margin-top: 20px;
+        }
+        .order-form input, .order-form textarea, .order-form button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background: #1e1e2f;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+        .order-form button {
+            background-color: #f0c674;
+            color: #1e1e2f;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .order-form button:hover {
+            background-color: #d4a951;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3a3a55;
+            color: #f0c674;
+        }
+        a {
+            color: #f0c674;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Toko Barang Custom</h1>
+        <p>Pesan barang dengan desain sesuai keinginan Anda!</p>
+    </header>
+    <div class="container">
+        <h2>Produk Kami</h2>
+        <div class="product">
+            <img src="https://via.placeholder.com/80" alt="Custom Mug">
+            <div class="product-details">
+                <h3>Custom Mug</h3>
+                <p>Desain mug dengan gambar atau tulisan favorit Anda.</p>
+                <label for="mug-quantity">Jumlah:</label>
+                <input type="number" id="mug-quantity" min="1" value="1">
+            </div>
+            <button onclick="addToCart('Custom Mug', 'mug-quantity')">Pesan</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/80" alt="Custom T-Shirt">
+            <div class="product-details">
+                <h3>Custom T-Shirt</h3>
+                <p>Pilih desain kaos dengan warna dan ukuran pilihan Anda.</p>
+                <label for="tshirt-quantity">Jumlah:</label>
+                <input type="number" id="tshirt-quantity" min="1" value="1">
+            </div>
+            <button onclick="addToCart('Custom T-Shirt', 'tshirt-quantity')">Pesan</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/80" alt="Custom Tote Bag">
+            <div class="product-details">
+                <h3>Custom Tote Bag</h3>
+                <p>Cetak desain unik Anda pada tote bag serbaguna.</p>
+                <label for="totebag-quantity">Jumlah:</label>
+                <input type="number" id="totebag-quantity" min="1" value="1">
+            </div>
+            <button onclick="addToCart('Custom Tote Bag', 'totebag-quantity')">Pesan</button>
+        </div>
+
+        <h2>Form Pemesanan</h2>
+        <form class="order-form" onsubmit="submitOrder(event)">
+            <label for="name">Nama Anda</label>
+            <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+            <label for="contact">Nomor Kontak</label>
+            <input type="text" id="contact" placeholder="Masukkan nomor kontak" required>
+            <label for="order-details">Detail Pemesanan</label>
+            <textarea id="order-details" placeholder="Masukkan detail pemesanan" required></textarea>
+            <button type="submit">Kirim Pemesanan</button>
+        </form>
+
+        <h2>Riwayat Pesanan</h2>
+        <ul id="order-list"></ul>
+    </div>
+    <footer>
+        <p>Hubungi kami di: <a href="tel:+628123456789">+62 812-3456-789</a></p>
+    </footer>
+
+    <script>
+        const orders = [];
+
+        function addToCart(product, quantityId) {
+            const quantityInput = document.getElementById(quantityId);
+            const quantity = quantityInput.value;
+
+            if (quantity <= 0) {
+                displayToast('Jumlah harus lebih dari 0!', true);
+                return;
+            }
+
+            const orderDetails = document.getElementById('order-details');
+            orderDetails.value += `${product} x${quantity}\n`;
+            displayToast(`${product} x${quantity} ditambahkan ke detail pemesanan.`);
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const details = document.getElementById('order-details').value;
+
+            if (!name || !contact || !details) {
+                displayToast('Harap lengkapi semua kolom!', true);
+                return;
+            }
+
+            const order = {
+                name,
+                contact,
+                details,
+            };
+
+            orders.push(order);
+            displayOrders();
+
+            document.getElementById('name').value = '';
+            document.getElementById('contact').value = '';
+            document.getElementById('order-details').value = '';
+
+            displayToast('Pesanan berhasil dikirim!');
+        }
+
+        function displayOrders() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = '';
+
+            orders.forEach((order, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${index + 1}. ${order.name} (${order.contact}):\n${order.details}`;
+                li.style.padding = '10px';
+                li.style.marginBottom = '10px';
+                li.style.backgroundColor = '#323245';
+                li.style.border = '1px solid #444';
+                li.style.borderRadius = '5px';
+                orderList.appendChild(li);
+            });
+        }
+
+        function displayToast(message, isError = false) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.right = '20px';
+            toast.style.padding = '15px 20px';
+            toast.style.backgroundColor = isError ? '#f44336' : '#f0c674';
+            toast.style.color = '#1e1e2f';
+            toast.style.borderRadius = '5px';
+            toast.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            toast.style.zIndex = '1000';
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
