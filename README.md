@@ -77,9 +77,9 @@ sudo apt install php libapache2-mod-php php-mysql mysql-server -y
 sudo apt install phpmyadmin -y
 ```
 ### Package configuration
- ![logo](1.jpg)
- ![Logo](2.jpg)
- ![Logo](3.jpg)
+ ![logo](002.png)
+ ![Logo](003.png)
+ ![Logo](004.png)
 
 ### PHP file
 ```bash
