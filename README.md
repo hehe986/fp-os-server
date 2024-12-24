@@ -66,7 +66,7 @@ sudo ufw status
 ```
 
 ## 3. MySQL dan PHP
- ![Logo](apache2.jpg)
+ ![Logo](duo.png)
 
 ### Install MySQL dan server
 ```bash
@@ -96,7 +96,7 @@ sudo apt install phpmyadmin -y
 ```bash
  sudo nano /etc/phpmyadmin/config-db.php
 ```
-![isiconfig-db](2.jpg)
+![006](006.png)
 
 ### Membuat symlink ke folder phpMyAdmin
 ```bash
