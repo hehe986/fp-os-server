@@ -111,7 +111,7 @@ sudo mysql -u root -p
 ![009](009.png)
 
 ## 4. Redis
- ![Logo](duo.png)
+ ![Logo](redis.png)
 
 ### Install redis
 ```bash
