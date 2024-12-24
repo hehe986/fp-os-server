@@ -87,10 +87,11 @@ sudo apt install phpmyadmin -y
 ```
 ![dir.conf](2.jpg)
 
-### PHP file
+### Edit info.php
 ```bash
- sudo nano /etc/apache2/mods-enabled/dir.conf
+ sudo nano /var/www/html/info.php
 ```
+![006](4.png)
 
 ### Konfigurasi Koneksi Database
 ```bash
