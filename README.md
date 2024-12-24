@@ -178,7 +178,7 @@ sudo mysql -u root -p
 ```
 ![009](009.png)
 
-## 5. Install Grafana
+## 6. Demo
  ![Logo](grafana.png)
 
 ### Install grafana
