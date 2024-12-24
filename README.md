@@ -85,7 +85,7 @@ sudo apt install phpmyadmin -y
 ```bash
  sudo nano /etc/apache2/mods-enabled/dir.conf
 ```
-![dir.conf](2.jpg)
+![dir.conf](4.png)
 
 ### Edit info.php
 ```bash
