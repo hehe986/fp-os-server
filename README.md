@@ -108,11 +108,11 @@ sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 ```bash
 sudo mysql -u root -p
 ```
-![009](2.jpg)
+![009](009.png)
 
 ### Masuk mysql
 ```bash
 sudo nano /var/www/html/submit_order.php
 ```
-![011](2.jpg)
+![011](011.png)
 
