@@ -177,3 +177,24 @@ tambahkan ini :
 sudo mysql -u root -p
 ```
 ![009](009.png)
+
+## 5. Install Grafana
+ ![Logo](grafana.png)
+
+### Install grafana
+```bash
+sudo apt install -y software-properties-common
+sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+sudo apt update
+sudo apt install grafana
+```
+
+### mulai grafana
+```bash
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server
+```
+## 5. Install Grafana
+![Logo](demo1.png)
+![Logo](demo2.png)
