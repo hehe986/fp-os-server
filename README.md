@@ -110,9 +110,71 @@ sudo mysql -u root -p
 ```
 ![009](009.png)
 
-### Masuk mysql
+## 4. Redis
+ ![Logo](duo.png)
+
+### Install redis
+```bash
+sudo apt install php-redis -y 
+```
+### edit redis.conf
+```bash
+sudo nano /etc/redis.conf
+```
+![logo](10.png)
+![logo](11.png)
+
+### Package configuration
+ ![logo](002.png)
+ ![Logo](003.png)
+ ![Logo](004.png)
+
+### restart
+```bash
+ sudo systemctl restart redis.service
+```
+![dir.conf](2.jpg)
+
+### status redis
+```bash
+ sudo systemctl status redis
+```
+![006](4.png)
+
+### masuk redis-cli
+```bash
+ redis-cli
+```
+![006](8.png)
+
+### restart lagi
+```bash
+ sudo systemctl restart redis.service
+```
+
+### port yang sedang mendengarkan
+```bash
+ sudo netstat -lnp | grep redis
+```
+
+### buka edit redis.conf
+```bash
+sudo nano /etc/redis.conf
+```
+### buka edit redis.conf
+tambahkan ini :
+![006](14.png)
+
+### masuk submit_order.php
 ```bash
 sudo nano /var/www/html/submit_order.php
 ```
-![011](011.png)
+### buka edit submit_order.php
+tambahkan ini :
+![006](16.png)
 
+### Masuk mysql
+```bash
+sudo mysql -u root -p
+```
+![009](009.png)
