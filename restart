@@ -124,11 +124,6 @@ sudo nano /etc/redis.conf
 ![logo](10.png)
 ![logo](11.png)
 
-### Package configuration
- ![logo](002.png)
- ![Logo](003.png)
- ![Logo](004.png)
-
 ### restart
 ```bash
  sudo systemctl restart redis.service
@@ -172,9 +167,3 @@ sudo nano /var/www/html/submit_order.php
 ### buka edit submit_order.php
 tambahkan ini :
 ![006](16.png)
-
-### Masuk mysql
-```bash
-sudo mysql -u root -p
-```
-![009](009.png)
