@@ -16,7 +16,7 @@ Tema : Web Server Jual Jasa Custom
 | `Web Server`            | `Apache2`                |
 | `Database Server`       | `MySQL`                  |
 | `SSH Server`            | `OpenSSH`                |
-| `Data Structure Server` | `OpenSSH`                |
+| `Data Structure Server` | `Redis  `                |
 | `Monitoring`            | ` Grafana`               |
 
 ## Langkah-Langkah
