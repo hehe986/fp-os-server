@@ -133,7 +133,6 @@ sudo nano /etc/redis.conf
 ```bash
  sudo systemctl restart redis.service
 ```
-![dir.conf](2.jpg)
 
 ### status redis
 ```bash
