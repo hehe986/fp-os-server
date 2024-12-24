@@ -178,7 +178,7 @@ sudo mysql -u root -p
 ```
 ![009](009.png)
 
-## 6. Demo
+## 5. Install Grafana
  ![Logo](grafana.png)
 
 ### Install grafana
@@ -195,6 +195,6 @@ sudo apt install grafana
 sudo systemctl start grafana-server
 sudo systemctl enable grafana-server
 ```
-## 5. Install Grafana
+## 6. Demo
 ![Logo](demo1.png)
 ![Logo](demo2.png)
