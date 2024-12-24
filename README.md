@@ -11,13 +11,13 @@ Tema : Web Server Jual Jasa Custom
 - Ubuntu Server 24.04.1
 
 ## Layanan yang digunakan
-| Jenis Layanan           | Layanan Server              |
+| Jenis Layanan           | Layanan Server           |
 | :--------               | :-------                 |
 | `Web Server`            | `Apache2`                |
 | `Database Server`       | `MySQL`                  |
 | `SSH Server`            | `OpenSSH`                |
 | `Data Structure Server` | `OpenSSH`                |
-| `Monitoring`            | `Prometheus dan Grafana` |
+| `Monitoring`            | ` Grafana`               |
 
 ## Langkah-Langkah
 ## Langkah-Langkah
