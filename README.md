@@ -91,7 +91,7 @@ sudo apt install phpmyadmin -y
 ```bash
  sudo nano /var/www/html/info.php
 ```
-![006](info.php.png)
+![006](6.png)
 
 ### Konfigurasi Koneksi Database
 ```bash
