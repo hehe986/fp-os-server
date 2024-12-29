@@ -91,7 +91,7 @@ sudo apt install phpmyadmin -y
 ```bash
  sudo nano /var/www/html/info.php
 ```
-![006](4.png)
+![006](info.php.png)
 
 ### Konfigurasi Koneksi Database
 ```bash
@@ -123,11 +123,6 @@ sudo nano /etc/redis.conf
 ```
 ![logo](10.png)
 ![logo](11.png)
-
-### Package configuration
- ![logo](002.png)
- ![Logo](003.png)
- ![Logo](004.png)
 
 ### restart
 ```bash
